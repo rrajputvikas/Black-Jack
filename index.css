@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(to right, rgb(100, 187, 42), rgb(173, 240, 186));
+  height: 100vh;
+  width: 100vw;
+}
+
+.game-area {
+  margin: 0 auto;
+  width: 30%;
+  height: 60%;
+  border-radius: 6%;
+  transform: translateY(30%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.menu {
+  height: 10%;
+  backdrop-filter: blur(20px) saturate(120%) contrast(200%);
+  background: rgb(255, 255, 255, .4);
+  border-radius: 25px 25px 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.title {
+  font-family: cursive;
+  font-size: 2em;
+  color: white;
+  text-shadow: -2px 2px 5px #000000;
+  animation: drag 1s infinite ease-out;
+} 
+#close {
+  position: absolute;
+  display: flex;
+  width: 17%;
+  height: 60%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px; 
+  border: 2px dashed red;
+  background-color: white;
+  right: 80%;
+  cursor: pointer;
+}
+#close p {
+  color: red;
+  font-size: 1.5em;
+  font-family: monospace;
+}
+
+#on {
+  position: absolute;
+  display: flex;
+  width: 17%;
+  height: 60%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px; 
+  background-color: white;
+  border: 2px dashed green;
+  left: 80%;
+  cursor: pointer;
+}
+#on p {
+  color: green;
+  font-size: 1.5em;
+  font-family: monospace; 
+}
+
+#menu:hover + #main-box {
+  transition: .25s;
+  box-shadow: inset 0 0 5px 0 rgba(0, 0, 0, 0.5);
+}
+  
+@keyframes drag {
+  30% {
+    transform: translateY(10%);
+  }  
+  80% {
+    transform: rotate(-.9deg) translateY(-.9%);
+  }
+}
+
+.main-box {
+  height: 90%;
+  backdrop-filter: blur(20px) saturate(120%) contrast(200%);
+  background: rgb(255, 255, 255, .4);
+  border-radius: 0px 0px 25px 25px;
+}
